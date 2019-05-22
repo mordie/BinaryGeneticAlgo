@@ -1,6 +1,8 @@
 import org.junit.Test;
 
 import java.util.*;
+import java.util.function.DoubleFunction;
+import java.util.function.ToDoubleFunction;
 
 public class TestGeneticAlgorithm {
 
@@ -13,25 +15,8 @@ public class TestGeneticAlgorithm {
         double p_c = 0.01;
 
         GeneticAlgorithm algorithm = new GeneticAlgorithm();
-        Map<String, Double> fitnesses = new HashMap<>();
 
-        List<String> list = new ArrayList<>();
-        for (int i=0; i<populationSize; i++)
-            list.add(algorithm.generate(chromosomeSize));
+        algorithm.run(s -> rnd.nextDouble(), chromosomeSize, p_c, p_m);
 
-        for (String str: list) {
-            String mutation = algorithm.mutate(str, p_m);
-            double fittness = rnd.nextDouble();
-            fitnesses.put(mutation, fittness);
-            System.out.printf("%s -> %s :: %f (%s)\r\n", str, mutation, fittness, str.equalsIgnoreCase(mutation));
-        }
-
-        for (int i = 0; i< populationSize-2; i++) {
-            String chromosome1 = list.get(i); String chromosome2 = list.get(i+1);
-            String[] newOnes = algorithm.crossover(chromosome1, chromosome2);
-//            System.out.printf(" from %s and %s\r\n into %s and %s\r\n", chromosome1, chromosome2, newOnes[0], newOnes[1]);
-        }
-
-//        String result = algorithm.run(a -> 0.0, 14, p_c, p_m, 100);
     }
 }
