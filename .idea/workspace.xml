@@ -20,8 +20,10 @@
     <session id="-1036505296">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -38,37 +40,35 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1258" />
+          <entry key="java" value="1621" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1258" />
+          <entry key="JAVA" value="1621" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/GeneticAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="323">
+              <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1004#1005#0" expanded="true" />
-                <element signature="e#1048#1049#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/TestGeneticAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="513">
+              <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -264,7 +264,9 @@
     <option name="modificationStamps">
       <map>
         <entry key="$PROJECT_DIR$" value="6231797516041" />
+        <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/build.gradle" value="3847002515" />
+        <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2007532874" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="4155931779" />
       </map>
     </option>
@@ -382,22 +384,23 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/GeneticAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestGeneticAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GeneticAlgorithm.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="237" />
-    <option name="y" value="167" />
+    <option name="x" value="292" />
     <option name="width" value="1626" />
     <option name="height" value="1044" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -441,7 +444,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="RunDashboard">
@@ -500,21 +502,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestGeneticAlgorithm_testRun - 2019.05.15 at 22h 08m 13s.xml">
-      <configuration name="TestGeneticAlgorithm.testRun" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestGeneticAlgorithm_testRun - 2019.05.15 at 22h 08m 23s.xml">
-      <configuration name="TestGeneticAlgorithm.testRun" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestGeneticAlgorithm_testRun - 2019.05.15 at 22h 08m 40s.xml">
-      <configuration name="TestGeneticAlgorithm.testRun" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestGeneticAlgorithm_testRun - 2019.05.15 at 22h 22m 29s.xml">
-      <configuration name="TestGeneticAlgorithm.testRun" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestGeneticAlgorithm_testRun - 2019.05.15 at 22h 22m 56s.xml">
-      <configuration name="TestGeneticAlgorithm.testRun" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestGeneticAlgorithm_testRun - 2019.05.15 at 22h 26m 25s.xml">
       <configuration name="TestGeneticAlgorithm.testRun" configurationId="JUnit" />
     </history-entry>
@@ -530,37 +517,79 @@
     <history-entry file="TestGeneticAlgorithm_testRun - 2019.05.15 at 22h 51m 39s.xml">
       <configuration name="TestGeneticAlgorithm.testRun" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestGeneticAlgorithm_testRun - 2019.05.17 at 12h 30m 44s.xml">
+      <configuration name="TestGeneticAlgorithm.testRun" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestGeneticAlgorithm_testRun - 2019.05.17 at 12h 30m 55s.xml">
+      <configuration name="TestGeneticAlgorithm.testRun" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestGeneticAlgorithm_testRun - 2019.05.17 at 12h 33m 47s.xml">
+      <configuration name="TestGeneticAlgorithm.testRun" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestGeneticAlgorithm_testRun - 2019.05.17 at 12h 34m 36s.xml">
+      <configuration name="TestGeneticAlgorithm.testRun" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestGeneticAlgorithm_testRun - 2019.05.17 at 13h 38m 40s.xml">
+      <configuration name="TestGeneticAlgorithm.testRun" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="297" y="7" width="1626" height="1044" extended-state="0" />
+    <frame x="292" y="0" width="1626" height="1044" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Designer" />
-      <window_info id="Learn" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24968071" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25287357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Build" weight="0.32967034" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Learn" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5285714" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34615386" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Gradle" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32967034" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32967034" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="10" weight="0.32967034" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Gradle" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="chromosome1.substring(0, cut)" language="JAVA" />
+        <watch expression="chromosome1.substring(cut, length)" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>chromosome1.substring(cut, length)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>chromosome1.substring(cut, length - 1)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>chromosome1.substring(0, cut)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/build.gradle">
@@ -570,22 +599,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GeneticAlgorithm.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestGeneticAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="513">
+          <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#1048#1049#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestGeneticAlgorithm.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GeneticAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="323">
+          <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

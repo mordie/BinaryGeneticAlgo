@@ -6,7 +6,7 @@ public class GeneticAlgorithm {
     private static final Random rnd = new Random();
 
     private char flip(char c) {
-        return (c == 31) ? '0' : '1';
+        return (c == '1') ? '0' : '1';
     }
 
     public String generate(int length) {
@@ -22,7 +22,6 @@ public class GeneticAlgorithm {
                 .sorted(Comparator.comparing(Map.Entry::getValue))
                 .map(entry -> entry.getKey())
                 .collect(Collectors.toList());
-
         return result.toArray(new String[]{});
     }
 
@@ -35,9 +34,15 @@ public class GeneticAlgorithm {
         return sb.toString();
     }
 
-    private String[] crossover(String chromosome1, String chromosome2) {
-        // TODO: Implement the crossover method
-        return new String[]{};
+    public String[] crossover(String chromosome1, String chromosome2) {
+        int length = chromosome1.length(); int cut = rnd.nextInt(length);
+        System.out.printf("::>\t%s | %s\r\n", chromosome1, chromosome2);
+        System.out.printf("::>\t%s | %s\r\n", chromosome1.substring(0, cut), chromosome2.substring(cut, length));
+        String chromosome3 = chromosome1.substring(0, cut) + chromosome2.substring(cut, length);
+        System.out.printf("::>\t%s | %s\r\n", chromosome2, chromosome1);
+        System.out.printf("::>\t%s | %s\n", chromosome2.substring(0, cut), chromosome1.substring(cut, length));
+        String chromosome4 = chromosome2.substring(0, cut) + chromosome1.substring(cut, length);
+        return new String[]{chromosome3, chromosome4};
     }
 
     public String run(ToDoubleFunction<String> fitness, int length, double p_c, double p_m) {
