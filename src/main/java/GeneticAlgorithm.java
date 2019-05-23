@@ -6,6 +6,8 @@ import java.util.stream.IntStream;
 
 public class GeneticAlgorithm {
     private static final Random rnd = new Random();
+    Map<String, Double> collection;
+    double delta = 0.1;
 
     private char flip(char c) {
         return (c == '1') ? '0' : '1';
@@ -21,10 +23,11 @@ public class GeneticAlgorithm {
 
     private String[] select(Map<String, Double> fitnesses) {
         List<String> result = fitnesses.entrySet().stream()
+                .map(e -> {e.setValue(e.getValue() * e.getValue() * rnd.nextDouble()); return e;})
                 .sorted((e1, e2) -> Double.compare(e2.getValue(), e1.getValue()))
                 .map(entry -> entry.getKey())
                 .collect(Collectors.toList());
-        return result.toArray(new String[]{});
+        return new String[]{result.get(0), result.get(1)};
     }
 
     private String mutate(String chromosome, double p) {
@@ -44,15 +47,73 @@ public class GeneticAlgorithm {
     }
 
     public String run(ToDoubleFunction<String> fitness, int length, double p_c, double p_m) {
-        Map<String, Double> collection = IntStream.range(0, length).boxed()
+        int population_size = 10 * length;
+        delta = 1 / length;
+        collection = IntStream.range(0, population_size).boxed()
                 .map(i -> generate(length))
+                .distinct()
                 .collect(Collectors.toMap(Function.identity(), s-> fitness.applyAsDouble(s)));
-        String[] selection = select(collection);
-        return selection[0];
+
+        String bestFit;
+        Double best;
+        do {
+            String[] selected = select(collection);
+            String[] newborns = crossover(selected[0], selected[1]);
+            collection.put(newborns[0], fitness.applyAsDouble(newborns[0]));
+            collection.put(newborns[1], fitness.applyAsDouble(newborns[1]));
+            for (int i = 0; i < 3; i++) {
+                Map.Entry<String, Double> leastFit =
+                    collection.entrySet().stream()
+                        .sorted(Comparator.comparing(Map.Entry::getValue))
+                        .findFirst()
+                        .get();
+                collection.remove(leastFit);
+            }
+
+            bestFit = collection.entrySet().stream()
+                    .sorted((e1, e2) -> Double.compare(e2.getValue(), e1.getValue()))
+                    .map(e -> e.getKey())
+                    .findFirst()
+                    .orElse(selected[0]);
+            best = fitness.applyAsDouble(bestFit);
+
+            System.out.printf("size: %d\tbestFit: %s (%s == %s)\r\n", collection.size(), bestFit, best, 1 - delta);
+        } while (best < 1 - delta );
+
+        return bestFit;
     }
 
     public String run(ToDoubleFunction<String> fitness, int length, double p_c, double p_m, int iterations) {
-        // TODO: Implement the run method
-        return "000";
+        int population_size = 10 * length;
+        delta = 1 / length;
+        collection = IntStream.range(0, population_size).boxed()
+                .map(i -> generate(length))
+                .distinct()
+                .collect(Collectors.toMap(Function.identity(), s-> fitness.applyAsDouble(s)));
+
+        String bestFit;
+        Double best;
+        do {
+            String[] selected = select(collection);
+            String[] newborns = crossover(selected[0], selected[1]);
+            collection.put(newborns[0], fitness.applyAsDouble(newborns[0]));
+            collection.put(newborns[1], fitness.applyAsDouble(newborns[1]));
+            Map.Entry<String, Double> leastFit = collection.entrySet().stream()
+                    .sorted(Comparator.comparing(Map.Entry::getValue))
+                    .findFirst()
+                    .get();
+            collection.remove(leastFit);
+
+            bestFit = collection.entrySet().stream()
+                    .sorted((e1, e2) -> Double.compare(e2.getValue(), e1.getValue()))
+                    .map(e -> e.getKey())
+                    .findFirst()
+                    .orElse(selected[0]);
+            best = fitness.applyAsDouble(bestFit);
+
+//            System.out.printf("%03d:: size: %d\tbestFit: %s (%s == %s)\r\n", iterations--, collection.size(), bestFit, best, 1 - delta);
+        } while (best < 1 - delta && iterations > 0);
+
+        return bestFit;
     }
 }
